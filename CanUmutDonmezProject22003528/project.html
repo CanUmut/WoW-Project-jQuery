@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Can Umut Donmez Project</title>
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/smoothness/jquery-ui.css">
+    <script src="./jquery-3.6.3.min.js"></script>
+    <script src="https://kit.fontawesome.com/63cb935768.js" crossorigin="anonymous"></script>
+    <script src="//code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="//code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="project.js">
+</head>
+<style>
+    
+
+</style>
+
+<body>
+    <div id="main">
+        <h1>CTIS255 - Project - Can Umut Donmez</h1>
+        <table id="words">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="on" class="LOT"><span>L</span></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="on" class="SOUL"><span>S</span></td>
+                <td></td>
+                <td id="on" class="LOT"><span>O</span></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td id="on" class="LOST"><span>L</span></td>
+                <td id="on" class="LOST SOUL"><span>O</span></td>
+                <td id="on" class="LOST"><span>S</span></td>
+                <td id="on" class="LOST LOT"><span>T</span></td>
+                <td></td>
+                <td id="on" class="LOTS LUST"><span>L</span></td>
+                <td id="on" class="LOTS"><span>O</span></td>
+                <td id="on" class="LOTS"><span>T</span></td>
+                <td id="on" class="LOTS SLOT"><span>S</span></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="on" class="SOUL"><span>U</span></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td id="on" class="LUST"><span>U</span></td>
+                <td></td>
+                <td></td>
+                <td id="on" class="SLOT"><span>L</span></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td id="on" class="LOTUS SOUL"><span>L</span></td>
+                <td id="on" class="LOTUS OUT"><span>O</span></td>
+                <td id="on" class="LOTUS"><span>T</span></td>
+                <td id="on" class="LOTUS"><span>U</span></td>
+                <td id="on" class="LOTUS LUST"><span>S</span></td>
+                <td></td>
+                <td></td>
+                <td id="on" class="SLOT"><span>O</span></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td id="on" class="OUT"><span>U</span></td>
+                <td></td>
+                <td></td>
+                <td id="on" class="LUST"><span>T</span></td>
+                <td></td>
+                <td></td>
+                <td id="on" class="SLOT"><span>T</span></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td id="on" class="OUT"><span>T</span></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+        </table>
+        <div id="selection"></div>
+        <div id="hint"><i class="fa-solid fa-lightbulb"></i></i> <br><br> <div style="color: white;" id="hak"></div></div>
+        <div id="circle">
+            <div id="one"></div>
+            <div id="mid">
+                <div id="two"></div>
+                <div id="three"></div>
+            </div>
+            <div id="bot">
+                <div id="four"></div>
+                <div id="shuffle"><i class="fa-solid fa-shuffle"></i></div>
+                <div id="five"></div>
+            </div>
+        </div>
+    </div>
+</body>
+<script>
+
+    alert("Please Open This Project With Live Server. Otherwise Animations doesn't Work.");
+
+    let selection = "";
+    let words = ["LOT", "LOST", "SOUL", "OUT", "LOTUS", "LUST", "LOTS", "SLOT"];
+    let found = [];
+    let arr = ["L", "O", "T", "U", "S"];
+    var i = 0;
+
+    while(i < 5){
+        var num = Math.floor(Math.random() * 5)
+        if(arr[num] != ""){
+            if(i == 0){
+                $("#one").text(`${arr[num]}`);
+                arr[num] = "";
+            }else if(i == 1){
+                $("#two").text(`${arr[num]}`);
+                arr[num] = "";
+            }else if(i == 2){
+                $("#three").text(`${arr[num]}`);
+                arr[num] = "";
+            }else if(i == 3){
+                $("#four").text(`${arr[num]}`);
+                arr[num] = "";
+            }else if(i == 4){
+                $("#five").text(`${arr[num]}`);
+                arr[num] = "";
+            }
+            i++;
+        }
+            
+    }
+
+    $("#shuffle").click(function(){
+        if(selection == ""){
+            let arr = ["L", "O", "T", "U", "S"];
+            var i = 0;
+
+            while(i < 5){
+                var num = Math.floor(Math.random() * 5)
+                if(arr[num] != ""){
+                    if(i == 0){
+                     $("#one").text(`${arr[num]}`);
+                     arr[num] = "";
+                    }else if(i == 1){
+                        $("#two").text(`${arr[num]}`);
+                        arr[num] = "";
+                    }else if(i == 2){
+                        $("#three").text(`${arr[num]}`);
+                        arr[num] = "";
+                    }else if(i == 3){
+                        $("#four").text(`${arr[num]}`);
+                        arr[num] = "";
+                    }else if(i == 4){
+                        $("#five").text(`${arr[num]}`);
+                        arr[num] = "";
+                    }
+                    i++;
+                }
+            
+            }
+        }else{
+            $("#shuffle").effect("shake");
+        }
+    })
+    
+    
+    
+
+    $("#one").click(function(e){
+        if(selection.includes($("#one").text())){
+            $("#one").effect("shake");
+        }else{
+            selection += $("#one").text();
+            $("#selection").append($("#one").text());
+            $("#one").css("background", "crimson");      
+        }
+    })
+    $("#two").click(function(e){
+        if(selection.includes($("#two").text())){
+            $("#two").effect("shake");
+        }else{
+            selection += $("#two").text();
+            $("#selection").append($("#two").text());
+            $("#two").css("background", "crimson");
+        }
+    })
+    $("#three").click(function(e){
+        if(selection.includes($("#three").text())){
+            $("#three").effect("shake");
+        }else{
+            selection += $("#three").text();
+            $("#selection").append($("#three").text());
+            $("#three").css("background", "crimson");
+        }
+    })
+    $("#four").click(function(e){
+        if(selection.includes($("#four").text())){
+            $("#four").effect("shake");
+        }else{
+            selection += $("#four").text();
+            $("#selection").append($("#four").text());
+            $("#four").css("background", "crimson");
+        }
+    })
+    $("#five").click(function(e){
+        if(selection.includes($("#five").text())){
+            $("#five").effect("shake");
+        }else{
+            selection += $("#five").text();
+            $("#selection").append($("#five").text());
+            $("#five").css("background", "crimson");
+        }
+    })
+
+    let hak = 5;
+    $("#hak").append(`${hak}`);
+    
+    $("#hint").click(function(){
+        if(hak > 0){
+            $( "span" ).animate({color: "white"}, 1000)
+                        .delay(1000)
+                        .animate({color: "rgba(0, 255, 255, 1)"}, 1000);
+            hak--;
+            $("#hak").html(`${hak}`);
+        }else{
+            alert("You Don't Have More Hints");
+        }
+        
+    })
+
+    $(document).contextmenu(function() {
+        return false;
+    });
+
+    var c = 0;
+    $("#circle").contextmenu(function(e){
+        
+        if($(e.target).is("#one") || $(e.target).is("#two")
+            || $(e.target).is("#three") || $(e.target).is("#four")
+            || $(e.target).is("#five") || $(e.target).is("#shuffle")){
+            
+        }else{
+            if(words.includes(selection)){
+                if(found.includes(selection)){
+                    $(`.${selection}`).animate({color: "black"}, 200)
+                                        .animate({color: "white"}, 200);
+                    $(`.${selection}`).animate({color: "black"}, 200)
+                                        .animate({color: "white"}, 200);
+                    selection = "";
+                    $("#selection").text("");
+                    $("#one").css("background", "none");
+                    $("#two").css("background", "none");
+                    $("#three").css("background", "none");
+                    $("#four").css("background", "none");
+                    $("#five").css("background", "none");
+                }else{
+                    switch(selection){
+                    case "LOTUS": $(".LOTUS").css("background", "crimson")
+                                            .css("color", "white");
+                    break;
+                    case "LOT" : $(".LOT").css("background", "crimson")
+                                            .css("color", "white");
+                    break;
+                    case "LOST": $(".LOST").css("background", "crimson")
+                                            .css("color", "white");
+                    break;
+                    case "SOUL": $(".SOUL").css("background", "crimson")
+                                            .css("color", "white");
+                    break;
+                    case "OUT": $(".OUT").css("background", "crimson");
+                    break;
+                    case "LUST": $(".LUST").css("background", "crimson")
+                                            .css("color", "white");
+                    break;
+                    case "LOTS" : $(".LOTS").css("background", "crimson")
+                                            .css("color", "white");
+                    break;
+                    case "SLOT" : $(".SLOT").css("background", "crimson")
+                                            .css("color", "white");
+                }
+                found[c] = selection;
+                c++;
+                selection = "";
+                $("#selection").text("");
+                $("#one").css("background", "none");
+                $("#two").css("background", "none");
+                $("#three").css("background", "none");
+                $("#four").css("background", "none");
+                $("#five").css("background", "none");
+                }
+                
+                
+            }else{
+                $("#circle").effect("shake");
+                selection = "";
+                
+                $("#one").css("background", "none");
+                $("#two").css("background", "none");
+                $("#three").css("background", "none");
+                $("#four").css("background", "none");
+                $("#five").css("background", "none");
+                $("#selection").text("");
+            }
+            if(c == 8){
+                $("#main").html(`<div id= "end">
+                                <h2>
+                                    You Completed The Game!!!
+                                </h2>
+                                <h3>
+                                    Thank You For Playing.
+                                </h3>
+                                <h4>
+                                    You Can Play Again by pressing [F5].
+                                </h4>
+                                </div>`);
+            }
+
+        }
+    })
+
+    
+    
+    
+
+</script>
+</html>
+<!-- Words
+    LOT
+    LOST
+    SOUL
+    OUT
+    LOTUS
+    LUST
+    LOTS
+    SLOT -->

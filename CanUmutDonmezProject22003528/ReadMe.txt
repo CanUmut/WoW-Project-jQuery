@@ -1,0 +1,1 @@
+Please Open This Project With Visual Studio Code Live Server. Otherwise Animations doesn't Work.
